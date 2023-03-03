@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" style="height: 100%; min-height: 200px; min-width: 600px;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <title>О проекте</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+        :root {
+          --yellow-100: #fff9c4;
+        }
+      </style>
+  </head>
+  <body style="height: 100%; background-color: #52a499;">
+      <div class="container-fluid" style="background: linear-gradient(#042c84, #52a499) no-repeat; height: 100%;">
+        <div class="row gy-3" style="width: 100%;">
+          <div class="col-12" style="text-align: center; color: var(--bs-white); width: 100%;">
+            <h1 class="display-1">
+              Регистрация
+            </h1>
+          </div>
+          <div class="col-12">
+            <form class="row gy-3 px-2" action="/register" method="post">
+              <div class="col-4" style="text-align: center;">
+                  <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white);"><label class="form-label" >Имя:</label></h3>
+                  <input name="name" class="form-control" style="width: 60%">
+              </div>
+              <div class="col-4" style="text-align: center;">
+                  <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white) "><label class="form-label" >Фамилия:</label></h3>
+                  <input name="last_name" class="form-control" style="width: 60%">
+              </div>
+              <div class="col-4" style="text-align: center;">
+                  <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white) "><label class="form-label" >Логин:</label></h3>
+                  <input name="login" class="form-control" style="width: 60%">
+              </div>
+              <div class="col-4">
+                  <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white) "><label class="form-label" >Пароль:</label></h3>
+                  <input name="password" type="password" class="form-control" style="width: 60%">
+              </div>
+              <div class="col-4">
+                  <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white) "><label class="form-label" >Кто вы?</label></h3>
+                  <select class="form-select" aria-label="Default select example" style="width: 60%;" name="types">
+                  <option selected>Откройте меню выбора</option>
+                  <option value="student">Student</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="librarian">Librarian</option>
+                  </select>
+
+              </div>
+              <div class="col-4">
+                <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white) "><label class="form-label" >В каком вы классе?</label></h3>
+                <select class="form-select" aria-label="Default select example" style="width: 60%;" name="class_us">
+                  <option selected>Выберете класс</option>
+                  <option value="8И">8И</option>
+                  <option value="8М">8M</option>
+                  <option value="8Б">8Б</option>
+                  <option value="7А">7А</option>
+                  <option value="7Б">7Б</option>
+                  <option value="7В">7В</option>
+                <option value="TH">Я библиотекарь</option>
+                </select>
+              </div>
+              <div class="col-12">
+                  <input type="submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" style="height: 100%; min-height: 200px; min-width: 300px;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <title>О проекте</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+        :root {
+          --yellow-100: #fff9c4;
+        }
+      </style>
+  </head>
+  <body style="height: 100%; background-color: #52a499;">
+    <div class="container-fluid" style="background: linear-gradient(#042c84, #52a499) no-repeat; height: 100%;">
+      <div class="row">
+        <div class="col-12" style="text-align: center; color: var(--bs-white); width: 100%;">
+          <h1 class="display-1">
+            Вход
+          </h1>
+        </div>
+        <div class="col-12" style="text-align: center;">
+          <form action="/entrance" class="row gy-3 px-3" method="post">
+            <div class="col-4"></div>
+            <div class="col-4" style="text-align: center;">
+              <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white);"><label class="form-label">Логин:</label></h3>
+              <input class="form-control" name="login" style="text-align: center; min-width: 150px;">
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">
+              <h3 style="text-align: left; font-size: 2rem; color: var(--bs-white);"><label class="form-label">Пароль:</label></h3>
+              <input class="form-control" name="password" type="password" style="text-align: center; min-width: 150px;">
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">
+              <input type="submit" class="btn btn-primary" value="Вход">
+            </div>
+            <div class="col-4"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

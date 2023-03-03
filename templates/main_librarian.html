@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" style="height: 100%; min-width: 1000px">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <title>Онлаин Библиотека</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+        :root {
+          --yellow-100: #fff9c4;
+        }
+      </style>
+  </head>
+  <body style="height: 100%; background-color: #52a499;">
+    <div class="container-fluid" style="background: linear-gradient(#042c84, #52a499) no-repeat; height: 100%;">
+      <div class="row" style="width: 100%;">
+        <div class="col-3">
+          <form class="row gy-1"  action="/main" method="post">
+            <div class="col-12"><br></div>
+            {% for i in classes %}
+            <div class="col-12">
+              <input type="submit" name="clas" value="{{i}}" class="btn" style="background-color: var(--bs-white); width: 50%;">
+            </div>
+              {% if m != '' and m == i %}
+                {% for j in users[m] %}
+                  <div class="col-12">
+                    <input type="submit" name="chel" value="{{j}}" class="btn" style="background-color: var(--bs-white); width: 50%;">
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </form>
+          <br>
+          <form action="/main" method="post">
+            <input type="submit" name="out" value="Выход" class="btn btn-danger">
+          </form>
+          <a href="/books" class="btn btn-primary">Добавить книгу</a>
+        </div>
+        <div class="col-9">
+          <table class="table table-striped" style="color: var(--bs-white)">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Название</th>
+                <th scope="col">Автор</th>
+                <th scope="col">Количество</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c, i, j, n, id, mark, u in book %}
+                <tr>
+                  <th scope="row" style="color: var(--bs-white)">{{ c }}</th>
+                  <td style="color: var(--bs-white)">{{ i }}</td>
+                  <td style="color: var(--bs-white)">{{ j }}</td>
+                  <td style="color: var(--bs-white)">{{ n }}</td>
+                  {% if mark %}
+                  <td>
+                      <form action="/main" method="post">
+                        <button type="submit" name="diz" value='{{id}} {{u}}'>Сдать</button>
+                      </form>
+                  </td>
+                  {% endif %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% if mat %}
+            <a class="btn btn-primary" href="/add_book">Выдать книгу</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
